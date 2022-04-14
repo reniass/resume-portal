@@ -14,6 +14,13 @@ public class User {
     private boolean active;
     private String roles;
 
+    public User(String username, String password, boolean active, String roles) {
+        this.username = username;
+        this.password = password;
+        this.active = active;
+        this.roles = roles;
+    }
+
     public long getId() {
         return id;
     }
