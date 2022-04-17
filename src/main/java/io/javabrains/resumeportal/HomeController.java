@@ -25,6 +25,6 @@ public class HomeController {
     @GetMapping("/view/{userId}")
     public String view(@PathVariable String userId, Model model) {
         model.addAttribute("userId", userId);
-        return "profile";
+        return "profile-templates/2/index";
     }
 }
