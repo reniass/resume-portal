@@ -1,7 +1,7 @@
-package io.javabrains.resumeportal;
+package com.reniass.resumeportal;
 
-import io.javabrains.resumeportal.models.User;
-import io.javabrains.resumeportal.models.UserProfile;
+import com.reniass.resumeportal.models.User;
+import com.reniass.resumeportal.models.UserProfile;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,6 +1,6 @@
-package io.javabrains.resumeportal;
+package com.reniass.resumeportal;
 
-import io.javabrains.resumeportal.models.UserProfile;
+import com.reniass.resumeportal.models.UserProfile;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

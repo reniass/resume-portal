@@ -1,4 +1,4 @@
-package io.javabrains.resumeportal.models;
+package com.reniass.resumeportal.models;
 
 import javax.persistence.*;
 

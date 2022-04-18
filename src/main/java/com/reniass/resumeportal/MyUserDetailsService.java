@@ -1,7 +1,7 @@
-package io.javabrains.resumeportal;
+package com.reniass.resumeportal;
 
-import io.javabrains.resumeportal.models.MyUserDetails;
-import io.javabrains.resumeportal.models.User;
+import com.reniass.resumeportal.models.MyUserDetails;
+import com.reniass.resumeportal.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

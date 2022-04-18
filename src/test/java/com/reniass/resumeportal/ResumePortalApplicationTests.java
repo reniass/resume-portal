@@ -1,4 +1,4 @@
-package io.javabrains.resumeportal;
+package com.reniass.resumeportal;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
