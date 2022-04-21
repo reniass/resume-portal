@@ -28,14 +28,20 @@ public class HomeController {
         return "edit page";
     }
 
+    @GetMapping("/test")
+    public String test() {
+        return "profile-templates/3/index";
+    }
+
     @GetMapping("/view/{userId}")
     public String view(@PathVariable String userId, Model model) {
         Optional<UserProfile> userProfileOptional = userProfileRepository.findByUserName(userId);
         userProfileOptional.orElseThrow(() -> new RuntimeException("not found: " + userId));
 
         UserProfile userProfile = userProfileOptional.get();
+        userProfile.getJobs();
         model.addAttribute("userId", userId);
         model.addAttribute("userProfile", userProfile);
-        return "profile-templates/2/index";
+        return "profile-templates/"+ userProfile.getTheme() + "/index";
     }
 }

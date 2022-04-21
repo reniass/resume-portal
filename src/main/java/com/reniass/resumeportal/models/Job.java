@@ -1,10 +1,11 @@
 package com.reniass.resumeportal.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 @Entity
 public class Job {
@@ -16,6 +17,30 @@ public class Job {
     private String designation;
     private LocalDate startDate;
     private LocalDate endDate;
+    private boolean currentJob;
+    @ElementCollection(targetClass = String.class)
+    private List<String> responsibilities = new ArrayList<>();
+
+    public Job() {}
+
+    public Job(String company, String designation, LocalDate startDate,
+               LocalDate endDate, boolean currentJob, List<String> responsibilities) {
+        this.company = company;
+        this.designation = designation;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.currentJob = false;
+        this.responsibilities = responsibilities;
+    }
+
+    public Job(String company, String designation, LocalDate startDate,
+               boolean currentJob, List<String> responsibilities) {
+        this.company = company;
+        this.designation = designation;
+        this.startDate = startDate;
+        this.currentJob = true;
+        this.responsibilities = responsibilities;
+    }
 
     public int getId() {
         return id;
@@ -55,6 +80,30 @@ public class Job {
 
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
+    }
+
+    public boolean isCurrentJob() {
+        return currentJob;
+    }
+
+    public void setCurrentJob(boolean currentJob) {
+        this.currentJob = currentJob;
+    }
+
+    public String getFormattedStartDate() {
+        return startDate.format(DateTimeFormatter.ofPattern("MMM uuuu", Locale.ENGLISH));
+    }
+
+    public String getFormattedEndDate() {
+        return startDate.format(DateTimeFormatter.ofPattern("MMM uuuu", Locale.ENGLISH));
+    }
+
+    public List<String> getResponsibilities() {
+        return responsibilities;
+    }
+
+    public void setResponsibilities(List<String> responsibilities) {
+        this.responsibilities = responsibilities;
     }
 
     @Override

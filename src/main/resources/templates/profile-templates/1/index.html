@@ -1,120 +1,126 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
-     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-     <title>One Page Resume</title>
+	<title>CV template</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-     <style type="text/css">
-        * { margin: 0; padding: 0; }
-        body { font: 16px Helvetica, Sans-Serif; line-height: 24px; background: url(../profile-templates/1/images/noise.jpg); }
-        .clear { clear: both; }
-        #page-wrap { width: 800px; margin: 40px auto 60px; }
-        #pic { float: right; margin: -30px 0 0 0; }
-        h1 { margin: 0 0 16px 0; padding: 0 0 16px 0; font-size: 42px; font-weight: bold; letter-spacing: -2px; border-bottom: 1px solid #999; }
-        h2 { font-size: 20px; margin: 0 0 6px 0; position: relative; }
-        h2 span { position: absolute; bottom: 0; right: 0; font-style: italic; font-family: Georgia, Serif; font-size: 16px; color: #999; font-weight: normal; }
-        p { margin: 0 0 16px 0; }
-        a { color: #999; text-decoration: none; border-bottom: 1px dotted #999; }
-        a:hover { border-bottom-style: solid; color: black; }
-        ul { margin: 0 0 32px 17px; }
-        #objective { width: 500px; float: left; }
-        #objective p { font-family: Georgia, Serif; font-style: italic; color: #666; }
-        dt { font-style: italic; font-weight: bold; font-size: 18px; text-align: right; padding: 0 26px 0 0; width: 150px; float: left; height: 100px; border-right: 1px solid #999;  }
-        dd { width: 600px; float: right; }
-        dd.clear { float: none; margin: 0; height: 15px; }
-     </style>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" /> 
+	<link rel="stylesheet" type="text/css" href="../profile-templates/1/index.css" media="all" />
+
 </head>
-
 <body>
 
-    <div id="page-wrap">
-    
-        <img src="../profile-templates/1/images/cthulu.png" alt="Photo of Cthulu" id="pic" />
-    
-        <div id="contact-info" class="vcard">
-        
-            <!-- Microformats! -->
-        
-            <h1 class="fn">C'thulhu</h1>
-        
-            <p>
-                Cell: <span class="tel">555-666-7777</span><br />
-                Email: <a class="email" href="mailto:greatoldone@lovecraft.com">greatoldone@lovecraft.com</a>
-            </p>
-        </div>
-                
-        <div id="objective">
-            <p th:text="${userProfile.summary} ">
-                I am an outgoing and energetic (ask anybody) young professional, seeking a 
-                career that fits my professional skills, personality, and murderous tendencies. 
-                My squid-like head is a masterful problem solver and inspires fear in who gaze upon it. 
-                I can bring world domination to your organization. 
-            </p>
-        </div>
-        
-        <div class="clear"></div>
-        
-        <dl>
-            <dd class="clear"></dd>
-            
-            <dt>Education</dt>
-            <dd>
-                <h2>Withering Madness University - Planet Vhoorl</h2>
-                <p><strong>Major:</strong> Public Relations<br />
-                   <strong>Minor:</strong> Scale Tending</p>
-            </dd>
-            
-            <dd class="clear"></dd>
-            
-            <dt>Skills</dt>
-            <dd>
-                <h2>Office skills</h2>
-                <p>Office and records management, database administration, event organization, customer support, travel coordination</p>
-                
-                <h2>Computer skills</h2>
-                <p>Microsoft productivity software (Word, Excel, etc), Adobe Creative Suite, Windows</p>
-            </dd>
-            
-            <dd class="clear"></dd>
-            
-            <dt>Experience</dt>
-            <dd>
-                <h2>Doomsday Cult <span>Leader/Overlord - Baton Rogue, LA - 1926-2010</span></h2>
-                <ul>
-                    <li>Inspired and won highest peasant death competition among servants</li>
-                    <li>Helped coordinate managers to grow cult following</li>
-                    <li>Provided untimely deaths to all who opposed</li>
-                </ul>
-                
-                <h2>The Watering Hole <span>Bartender/Server - Milwaukee, WI - 2009</span></h2>
-                <ul>
-                    <li>Worked on grass-roots promotional campaigns</li>
-                    <li>Reduced theft and property damage percentages</li>
-                    <li>Janitorial work, Laundry</li>
-                </ul> 
-            </dd>
-            
-            <dd class="clear"></dd>
-            
-            <dt>Hobbies</dt>
-            <dd>World Domination, Deep Sea Diving, Murder Most Foul</dd>
-            
-            <dd class="clear"></dd>
-            
-            <dt>References</dt>
-            <dd>Available on request</dd>
-            
-            <dd class="clear"></dd>
-        </dl>
-        
-        <div class="clear"></div>
-    
-    </div>
+<div id="doc2" class="yui-t7">
+	<div id="inner">
+	
+		<div id="hd">
+			<div class="yui-gc">
+				<div class="yui-u first">
+					<h1 ><span th:text="${userProfile.firstName}">FirstName</span> <span th:text="${userProfile.lastName}">LastName</span></h1>
+					<h2><span th:text="${userProfile.designation}">Designation</span></h2>
+				</div>
+
+				<div class="yui-u">
+					<div class="contact-info">
+						<h3><span th:text="${userProfile.email}">email</span></h3>
+						<h3><span th:text="${userProfile.phone}">Phone number</span></h3>
+					</div><!--// .contact-info -->
+				</div>
+			</div><!--// .yui-gc -->
+		</div><!--// hd -->
+
+		<div id="bd">
+			<div id="yui-main">
+				<div class="yui-b">
+
+					<div class="yui-gf">
+						<div class="yui-u first">
+							<h2>Profile</h2>
+						</div>
+						<div class="yui-u">
+							<p th:text="${userProfile.summary}" class="enlarge">
+								User profile summary
+							</p>
+						</div>
+					</div><!--// .yui-gf -->
+
+					<div class="yui-gf">
+						<div class="yui-u first">
+							<h2>Skills</h2>
+						</div>
+						<div class="yui-u">
+
+								<div class="talent" th:each="skill : ${userProfile.skills}">
+									<h5 th:text="${skill}">Skill</h5>
+								</div>
+
+
+						</div>
+					</div><!--// .yui-gf -->
+
+
+
+					<div class="yui-gf">
+	
+						<div class="yui-u first">
+							<h2>Experience</h2>
+						</div><!--// .yui-u -->
+
+						<div class="yui-u">
+
+							<div class="job">
+								<ul th:each="job : ${userProfile.jobs}">
+									<li><h3><span th:text="${job.getFormattedStartDate}">StartDate</span> - <span th:text="${job.currentJob} ? 'Present' : ${job.getFormattedEndDate}" >End date</span></h3></li>
+									<li><h3 th:text="${job.company}">Company</h3></li>
+									<li><h3 th:text="${job.designation}">Designation</h3></li>
+									<br/>
+									<ul th:each="responsibility : ${job.responsibilities}">
+										<li th:text="'- ' + ${responsibility}">Responsibility</li>
+									</ul>
+									<br/>
+								</ul>
+
+							</div>
+
+						</div><!--// .yui-u -->
+					</div><!--// .yui-gf -->
+
+
+					<div class="yui-gf last">
+						<div class="yui-u first">
+							<h2>Education</h2>
+						</div>
+						<div class="yui-u" >
+							<ul th:each="education : ${userProfile.educations}">
+								<li><h3><span th:text="${education.getFormattedStartDate}">Start date</span> - <span th:text="${education.getFormattedEndDate}" >End date</span></h3></li>
+								<li><h3 th:text="${education.college}">College</h3></li>
+								<li><h3 th:text="${education.qualification}">Qualification</h3></li>
+								<br/>
+								<li><h5 th:text="${education.summary}">Summary</h5></li>
+								<br/>
+							</ul>
+						</div>
+					</div><!--// .yui-gf -->
+
+
+				</div><!--// .yui-b -->
+			</div><!--// yui-main -->
+		</div><!--// bd -->
+
+		<div id="ft">
+
+		</div><!--// footer -->
+
+	</div><!-- // inner -->
+
+
+</div><!--// doc -->
+
 
 </body>
-
 </html>
+
