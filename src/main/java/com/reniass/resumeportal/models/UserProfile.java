@@ -150,4 +150,22 @@ public class UserProfile {
     public void setEducations(List<Education> educations) {
         this.educations = educations;
     }
+
+    @Override
+    public String toString() {
+        return "UserProfile{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", theme=" + theme +
+                ", summary='" + summary + '\'' +
+                ", designation='" + designation + '\'' +
+                ", jobs=" + jobs +
+                ", educations=" + educations +
+                ", skills=" + skills +
+                '}';
+    }
 }
