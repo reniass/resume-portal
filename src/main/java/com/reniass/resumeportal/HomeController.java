@@ -18,6 +18,12 @@ public class HomeController {
     @Autowired
     private UserProfileRepository userProfileRepository;
 
+    @GetMapping("/")
+    public String index() {
+        return "index";
+    }
+
+
     @GetMapping("/edit")
     public String edit(Principal principal, Model model, @RequestParam(required = false) String add) {
         String userName = principal.getName();
